@@ -46,6 +46,8 @@ It also supports common host comment styles across many languages, including:
 
 The grammar is static, so embedded languages outside that list are not injected.
 
+For editors with semantic tokens, the extension keeps semantic highlighting enabled and overlays tagged comment payloads with VS Code's TextMate grammars using the active theme's token colors, so semantic highlighting does not repaint injected code as plain comments after the language server finishes loading. Editors without semantic tokens use the normal TextMate injections only.
+
 ## Development
 
 1. Run `npm install`.

@@ -14,7 +14,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "grammars": [
@@ -224,7 +226,17 @@
           "meta.embedded.block.comment-language-injection.makefile": "other"
         }
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Comment Language Injection",
+      "properties": {
+        "commentLanguageInjection.semanticOverlay.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Overlay active-theme TextMate colors on injected language regions only in editors with semantic tokens, so semantic highlighting does not repaint injected code as plain comments."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -235,13 +247,18 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.118.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
+    "@types/vscode": "^1.118.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.39.3",
     "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.2"
   }
 }
