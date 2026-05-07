@@ -1,0 +1,453 @@
+{
+  "scopeName": "comment-language-injection.block",
+  "injectionSelector": "L:comment.block",
+  "patterns": [
+    {
+      "include": "#block-markdown"
+    },
+    {
+      "include": "#block-json"
+    },
+    {
+      "include": "#block-xml"
+    },
+    {
+      "include": "#block-html"
+    },
+    {
+      "include": "#block-css"
+    },
+    {
+      "include": "#block-js"
+    },
+    {
+      "include": "#block-py"
+    },
+    {
+      "include": "#block-c"
+    },
+    {
+      "include": "#block-cpp"
+    },
+    {
+      "include": "#block-cmd"
+    },
+    {
+      "include": "#block-bash"
+    },
+    {
+      "include": "#block-ps1"
+    },
+    {
+      "include": "#block-csv"
+    },
+    {
+      "include": "#block-env"
+    },
+    {
+      "include": "#block-dot"
+    },
+    {
+      "include": "#block-yaml"
+    },
+    {
+      "include": "#block-ini"
+    },
+    {
+      "include": "#block-toml"
+    },
+    {
+      "include": "#block-ts"
+    },
+    {
+      "include": "#block-tex"
+    },
+    {
+      "include": "#block-makefile"
+    }
+  ],
+  "repository": {
+    "block-leading-asterisk": {
+      "match": "^\\s*\\*(?![\\/)])(?:\\s)?",
+      "name": "punctuation.definition.comment"
+    },
+    "block-markdown": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:md|markdown)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.markdown",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "text.html.markdown"
+        }
+      ]
+    },
+    "block-json": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:json)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.json",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.json"
+        }
+      ]
+    },
+    "block-xml": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:xml)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.xml",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "text.xml"
+        }
+      ]
+    },
+    "block-html": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:html|htm|xhtml)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.html",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "text.html.derivative"
+        }
+      ]
+    },
+    "block-css": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:css)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.css",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.css"
+        }
+      ]
+    },
+    "block-js": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:js|javascript)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.js",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    "block-py": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:py|python)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.py",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.python"
+        }
+      ]
+    },
+    "block-c": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:c)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.c",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.c"
+        }
+      ]
+    },
+    "block-cpp": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:cpp|c\\+\\+|cc|cxx)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.cpp",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.cpp"
+        }
+      ]
+    },
+    "block-cmd": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:cmd|bat|batch)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.cmd",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.batchfile"
+        }
+      ]
+    },
+    "block-bash": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:bash|sh|shell|shellscript|zsh|fish|ksh|csh)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.bash",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.shell"
+        }
+      ]
+    },
+    "block-ps1": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:ps1|ps|powershell|pwsh)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.ps1",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.powershell"
+        }
+      ]
+    },
+    "block-csv": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:csv)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.csv",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "text.csv"
+        }
+      ]
+    },
+    "block-env": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:env|dotenv)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.env",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.dotenv"
+        }
+      ]
+    },
+    "block-dot": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:dot|graphviz)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.dot",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.dot"
+        }
+      ]
+    },
+    "block-yaml": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:yaml|yml)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.yaml",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.yaml"
+        }
+      ]
+    },
+    "block-ini": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:ini|cfg|config)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.ini",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.ini"
+        }
+      ]
+    },
+    "block-toml": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:toml)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.toml",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.toml"
+        }
+      ]
+    },
+    "block-ts": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:ts|typescript)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.ts",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.ts"
+        }
+      ]
+    },
+    "block-tex": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:tex|latex)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.tex",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "text.tex.latex"
+        }
+      ]
+    },
+    "block-makefile": {
+      "begin": "(?:(\\/\\*+|<!--|\\(\\*|--\\[\\[)\\s*)?language=(?:makefile|make|mk)\\b\\s*(?:\\r?\\n)?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(?=\\*\\/|-->|\\*\\)|\\]\\])",
+      "contentName": "meta.embedded.block.comment-language-injection.makefile",
+      "patterns": [
+        {
+          "include": "#block-leading-asterisk"
+        },
+        {
+          "include": "source.makefile"
+        }
+      ]
+    }
+  }
+}
