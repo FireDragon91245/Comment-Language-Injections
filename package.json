@@ -2,7 +2,7 @@
   "name": "comment-language-injection",
   "displayName": "Comment-Language-Injection",
   "description": "Inline comment language injection with static TextMate grammars.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "FireDragon91245",
   "author": "FireDragon91245",
   "repository": {
