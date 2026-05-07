@@ -5,6 +5,9 @@
   "version": "0.0.1",
   "publisher": "FireDragon91245",
   "author": "FireDragon91245",
+  "repository": {
+    "url": "https://github.com/FireDragon91245/Comment-Language-Injections"
+  },
   "engines": {
     "vscode": "^1.118.0"
   },
